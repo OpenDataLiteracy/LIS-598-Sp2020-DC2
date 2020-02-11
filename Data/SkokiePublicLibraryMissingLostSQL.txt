@@ -1,0 +1,22 @@
+SELECT 
+IV.itype_code_num iTypeCode,
+IV.location_code LocationCode,
+BRP.best_title Title, 
+BRP.best_author Author, 
+IRP.call_number CallNumber,
+IV.price Price, 
+IV.item_status_code StatusCode,
+IV.last_checkout_gmt LastCheckoutDate,
+IV.barcode ItemBarcode
+FROM sierra_view.item_view IV 
+
+JOIN sierra_view.bib_record_item_record_link BRIRL
+ON IV.id=BRIRL.item_record_id
+
+JOIN sierra_view.bib_record_property BRP
+ON BRIRL.bib_record_id=BRP.bib_record_id
+
+JOIN sierra_view.item_record_property IRP
+ON IV.id=IRP.item_record_id
+
+where item_status_code IN ('m','l')

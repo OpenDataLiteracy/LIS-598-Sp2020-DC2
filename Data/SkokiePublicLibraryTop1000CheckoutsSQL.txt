@@ -1,0 +1,25 @@
+SELECT 
+COUNT(CT.transaction_gmt) as TotalCheckouts,
+BRP.best_title Title, 
+BRP.best_author Author, 
+IRP.call_number CallNumber,
+IV.last_checkout_gmt LastCheckoutDate,
+IV.itype_code_num iTypeCode,
+CT.item_location_code LocationCode
+
+FROM sierra_view.circ_trans CT
+
+JOIN sierra_view.item_view IV
+ON IV.id=CT.item_record_id
+
+JOIN sierra_view.bib_record_property BRP
+ON CT.bib_record_id=BRP.bib_record_id
+
+JOIN sierra_view.item_record_property IRP
+ON CT.item_record_id=IRP.item_record_id
+
+WHERE CT.op_code IN ('o','r') AND transaction_gmt >='7-31-2019'
+GROUP BY 2,3,4,5,6,7
+ORDER BY 1 DESC
+limit 1000
+
