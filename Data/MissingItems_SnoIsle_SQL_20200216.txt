@@ -1,0 +1,31 @@
+--Final Missing Items Report - Polaris
+select mt.Description as [ItemType],
+       br.BrowseTitle as [Title],
+	   br.BrowseAuthor as [Author],
+	   br.PublicationYear as [CopyrightDate],
+	   ir.AcquisitionDate as [AccessionedDate],
+	   o.Abbreviation as [OwningLibrary],
+	   ir.Price as [ReplacementPrice],
+	   s.Description as [MissingStatus],
+	   ir.ItemStatusDate as [MissingDate],
+	   br.BrowseCallNo as [CallNumber],
+	   bsp.data as [PageCount],
+	   bsp.data as [ItemSize],
+	   ir.Barcode as [Barcode]
+from Polaris.Polaris.ItemRecords ir (nolock)
+LEFT JOIN Polaris.Polaris.BibliographicRecords br (nolock)
+	on br.BibliographicRecordID = ir.AssociatedBibRecordID
+LEFT JOIN Polaris.Polaris.BibliographicTags bt (nolock)
+	on bt.BibliographicRecordID = br.BibliographicRecordID and bt.TagNumber = 300
+LEFT JOIN Polaris.Polaris.BibliographicSubfields bsp (nolock) --pages
+	on bt.BibliographicTagID = bsp.BibliographicTagID and bsp.Subfield = 'a'
+LEFT JOIN Polaris.Polaris.BibliographicSubfields bss (nolock) -- size
+	on bt.BibliographicTagID = bss.BibliographicTagID and bss.Subfield = 'c'
+LEFT JOIN Polaris.Polaris.MaterialTypes mt (nolock) 
+	on mt.MaterialTypeID = ir.MaterialTypeID
+LEFT JOIN Polaris.Polaris.Organizations o (nolock)
+	on o.OrganizationID = ir.AssignedBranchID
+LEFT JOIN Polaris.Polaris.ItemStatuses s (nolock)
+	on s.ItemStatusID = ir.ItemStatusID
+where ir.ItemStatusID in (7, 10, 14)
+

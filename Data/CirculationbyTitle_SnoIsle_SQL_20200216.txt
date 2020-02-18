@@ -1,0 +1,34 @@
+--Final Circulation by Title Report - Polaris
+select COUNT(distinct th.TransactionID) as [TotalCheckouts],
+       br.BrowseTitle as [Title],
+	   br.BrowseCallNo as [CallNumber],
+	   br.BrowseAuthor as [Author],
+	   o.Abbreviation as [OwningLibrary],
+	   bs.data as [Publisher],
+	   br.PublicationYear as [CopyrightDate],
+	   MAX(ir.LastCircTransactionDate) as [DateLastBorrowed],
+	   c.Name as [itype],
+	   mt.Description as [ItemCode]
+from PolarisTransactions.Polaris.TransactionHeaders th (nolock)
+LEFT JOIN PolarisTransactions.Polaris.TransactionDetails tdmt (nolock)
+	on th.TransactionID = tdmt.TransactionID and th.TransactionTypeID = 6001 and tdmt.TransactionSubTypeID = 4 --material type
+LEFT JOIN PolarisTransactions.Polaris.TransactionDetails tdc (nolock)
+	on th.TransactionID = tdc.TransactionID and tdc.TransactionSubTypeID = 61 -- collection
+LEFT JOIN PolarisTransactions.Polaris.TransactionDetails tdi (nolock)
+	on th.TransactionID = tdi.TransactionID and tdi.TransactionSubTypeID = 38 -- item record
+LEFT JOIN Polaris.Polaris.ItemRecords ir (nolock)
+	on ir.ItemRecordID = tdi.numValue
+LEFT JOIN Polaris.Polaris.BibliographicRecords br (nolock)
+	on br.BibliographicRecordID = ir.AssociatedBibRecordID
+LEFT JOIN Polaris.Polaris.Organizations o (nolock)
+	on o.OrganizationID = ir.AssignedBranchID
+LEFT JOIN Polaris.Polaris.MaterialTypes mt (nolock)
+	on mt.MaterialTypeID = tdmt.numValue
+LEFT JOIN Polaris.Polaris.Collections c (nolock)
+	on c.CollectionID = tdc.numValue
+LEFT JOIN Polaris.Polaris.BibliographicTags bt (nolock)
+	on bt.BibliographicRecordID = br.BibliographicRecordID and bt.TagNumber = 264
+LEFT JOIN Polaris.Polaris.BibliographicSubfields bs (nolock)	
+	on bs.BibliographicTagID = bt.BibliographicTagID and bs.Subfield = 'b'
+where th.TranClientDate between DATEADD(MM, -6, GETDATE()) and GETDATE()
+GROUP BY br.BrowseTitle, br.BrowseCallNo, br.BrowseAuthor, o.Abbreviation, bs.Data, br.PublicationYear, c.Name, mt.Description
