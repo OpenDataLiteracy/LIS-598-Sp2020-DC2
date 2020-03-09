@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+circ <- read_delim("~/Documents/GitHub/LIS-598-Sp2020-DC2/Data/Casey Gabehart - Circulation by Title 6mo SIL 20200216.csv",
+                           n_max = 100000,
+                           delim = "|", 
+                           escape_double = FALSE, 
+                           trim_ws = TRUE)
+```
+
+```{r}
+write_csv(circ, "~/Documents/GitHub/LIS-598-Sp2020-DC2/Data/SAMPLE_SnoIsle_CircByTitle_20200216.csv", col_names = T)
+```
+
