@@ -26,10 +26,14 @@ REST services tend to offer an easy to parse URL structure consisting primarily 
 
 ![Web Service APIs](Images/WebServiceAPIs.png)
 
-Let’s take a look at a simple REST API example. This API is from Paul Hallet and is called [SWAPI](https://swapi/co): The Star Wars API. Paul [writes](https://swapi.co/about), "After hours of watching films and trawling through content online, we present to you all the People, Films, Species, Starships, Vehicles and Planets from Star Wars." SWAPI is built just to be an API, while other web applications may use the data, this API wasn't built with any particular application in mind. I did some searching of the backend of website (hosted on [Github](https://github.com/phalt/swapi/)) and found that the data are available in seven JSON files: films.json, people.json, planets.json, species.json, starships.json, transport.json, and vehicles.json. This SWAPI API, because it's built using a REST architecture, allows us to view the output from our API query directly in the browser. Let’s check out the People data. 
+Let’s take a look at a simple REST API example. This API is from Paul Hallet and is called [SWAPI](https://swapi/co): The Star Wars API. Paul [writes](https://swapi.co/about), "After hours of watching films and trawling through content online, we present to you all the People, Films, Species, Starships, Vehicles and Planets from Star Wars." SWAPI is built just to be an API, while other web applications may use the data, this API wasn't built with any particular application in mind. I did some searching of the backend of website (hosted on [Github](https://github.com/phalt/swapi/)) and found that the data are available in six JSON files: films.json, people.json, planets.json, species.json, starships.json, and vehicles.json. You'll note that these files match with Paul's list of datasets in the quote above. The SWAPI API, because it's built using a REST architecture, allows us to view the output from our API query directly in the browser. Let’s check out the People data. 
 
-The [SWAPI documentation](https://swapi.co/documentation#people) tells us that we can query the People data for the following "Attributes":
+The [SWAPI documentation](https://swapi.co/documentation#people) tells us that queries within the People data will result in the following "Attributes":
 
 ![SWAPI People Attributes: name, birth_year, eye_color, gener, hair_color, height, mass, skin_color, homeworld, films, species, starships, vehicles, url, created, edited, and you can search in the name field](Images/SWAPI_People.png)
 
-The highest level search we can do within the People data is also the URL with with we will begin our queries: [`https://swapi.co/api/people/`](https://swapi.co/api/people/)
+It also notes that searches will only happen with the Name attribute field. 
+
+The highest level search we can do within the People data is also the URL with with we will begin our queries: [`https://swapi.co/api/people/`](https://swapi.co/api/people/). You can go directly to that URL in your broswer to see the first 10 data entries for People. This API requires you to paginate through the entries in intervals of 10. Fortunately, it tells you exactly how many entries there are and what the API query will be for the next page:
+
+![SWAPI People API Call: count reveals total People, next reveals URL for next 10 People](Images/SWAPI_People_API_Call.png)
