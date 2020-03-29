@@ -25,3 +25,11 @@ As is the case with repositories, data portals, and an email from your boss, dat
 REST services tend to offer an easy to parse URL structure consisting primarily of nouns that reflect the logical hierarchical categories of the data on offer. I will show you an example of what that means below. REST APIs usually return JSON or XML but can sometimes also return different formats such as CSV.
 
 ![Web Service APIs](Images/WebServiceAPIs.png)
+
+Let’s take a look at a simple REST API example. This API is from Paul Hallet and is called [SWAPI](https://swapi/co): The Star Wars API. Paul [writes](https://swapi.co/about), "After hours of watching films and trawling through content online, we present to you all the People, Films, Species, Starships, Vehicles and Planets from Star Wars." SWAPI is built just to be an API, while other web applications may use the data, this API wasn't built with any particular application in mind. I did some searching of the backend of website (hosted on [Github](https://github.com/phalt/swapi/)) and found that the data are available in seven JSON files: films.json, people.json, planets.json, species.json, starships.json, transport.json, and vehicles.json. This SWAPI API, because it's built using a REST architecture, allows us to view the output from our API query directly in the browser. Let’s check out the People data. 
+
+The [SWAPI documentation](https://swapi.co/documentation#people) tells us that we can query the People data for the following "Attributes":
+
+![SWAPI People Attributes: name, birth_year, eye_color, gener, hair_color, height, mass, skin_color, homeworld, films, species, starships, vehicles, url, created, edited, and you can search in the name field](Images/SWAPI_People.png)
+
+The highest level search we can do within the People data is also the URL with with we will begin our queries: [`https://swapi.co/api/people/`](https://swapi.co/api/people/)
