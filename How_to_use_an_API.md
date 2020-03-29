@@ -24,3 +24,4 @@ As is the case with repositories, data portals, and everywhere else, data retrie
 
 REST services tend to offer an easy to parse URL structure consisting primarily of nouns that reflect the logical hierarchical categories of the data on offer. I will show you an example of what that means below. REST A.P.I.s usually return JSON or X.M.L. but can sometimes also return different formats such as CSV.
 
+![Web Service APIs](Images/WebServiceAPIs.png)
