@@ -32,4 +32,4 @@ The [SWAPI documentation](https://swapi.co/documentation#people) tells us that w
 
 ![SWAPI People Attributes: name, birth_year, eye_color, gener, hair_color, height, mass, skin_color, homeworld, films, species, starships, vehicles, url, created, edited, and you can search in the name field](Images/SWAPI_People.png)
 
-The highest level search we can do within the People data is also the URL with with we will begin our queries: `[https://swapi.co/api/](https://swapi.co/api/)`
+The highest level search we can do within the People data is also the URL with with we will begin our queries: [`https://swapi.co/api/people/`](https://swapi.co/api/people/)
