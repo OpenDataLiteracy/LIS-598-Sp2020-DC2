@@ -67,3 +67,5 @@ If this output were considerably longer and contained more nested arrays, it wou
 ![Pop-up Window to paste URL](Images/JSONFormatter_Load.png)
 
 The JSON Formatter allows you to sort data, filter, format, convert, and download data in alternate formats. If you want to use the data within Google Sheets for example, you can convert to csv, download the data, and open in Google Sheets.
+
+[![Python Script that captures Tweets. Youtube Video](Images/YouTubeScreenshot2.png)](//youtu.be/RY7q3MpRN3s "Twitter API with Python")
