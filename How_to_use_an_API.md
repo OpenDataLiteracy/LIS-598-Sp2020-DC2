@@ -12,7 +12,6 @@ API is the acronym for Application Programming Interface. An API does the work o
 So why should a data curator be interested in APIs? An API is a common tool for retrieving data.
 
 ![Why is this important?](Images/Whyisthisimportant.png)
-Image credit: [Data and Picard](http://www.insightsquared.com/2012/02/6-human-errors-by-data/)
 
 APIs provide the messenger service you need to collect data from sites like [Twitter](https://developer.twitter.com/en/docs/api-reference-index), [MySportsFeeds](https://www.mysportsfeeds.com/data-feeds/), [RottenTomatoes](https://developer.fandango.com/rotten_tomatoes), [Twitch](https://dev.twitch.tv/docs/api/), and more. Most of these sites will require you to apply for an API key and may have restrictions on the use of their data. For example, RottenTomatoes, states “Please note that at this time we no longer support unauthorized use of our data (e.g. unofficial projects, non-user facing data integrations).”
 
@@ -26,8 +25,6 @@ As is the case with repositories, data portals, and an email from your boss, dat
 REST services tend to offer an easy to parse URL structure consisting primarily of nouns that reflect the logical hierarchical categories of the data on offer. I will show you an example of what that means below. REST APIs usually return JSON or XML but can sometimes also return different formats such as CSV.
 
 ![Web Service APIs](Images/WebServiceAPIs.png)
-Image Credit: [XML](http://codedemand.blogspot.com/2014/11/what-is-xml.html) [JSON](https://blog.cloudstitch.com/what-is-json-8c0d983dbe7b)
-
 
 ## Simple REST Example
 
