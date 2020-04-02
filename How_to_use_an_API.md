@@ -39,3 +39,13 @@ The highest level search we can do within the People Resource is also the URL wi
 ![SWAPI People API Call: count reveals total People, next reveals URL for next 10 People](Images/SWAPI_People_API_Call.png)
 
 The pagination system is not ideal and makes it more tedious to grab all the data in the People dataset. I don't think it's common to see it set up this way. Let's try a query for Name in the People Resource. We need to follow the REST rules for querying.
+
+According to the documentation, in order to search within a Resource, we need to append:
+```
+/?search=<search term>
+```
+to the base URL. (Note that you will not need the brackets when you add your search term.)
+
+![SWAPI Search Documentation](Images/SWAPI_Search_Doc.png)
+
+So try out a search in the People Resource for "Luke". Your URL should look like: [`https://swapi.co/api/people/?search=Luke`](https://swapi.co/api/people/?search=Luke). You can further refine you search by adding an ampersand (&) and a second query. For example, you can designate a data format (which the documentation calls "encoding"). With this simple API example, your choices are very limited: JSON (which is the default) or wookie. Sadly at the time of this writing, wookie is throwing an "unexpected character error" so just go ahead and try adding JSON format to the last query: [`https://swapi.co/api/people/?search=Luke&format=wookiee`](https://swapi.co/api/people/?search=Luke$format=wookiee). (Note you do not need to repeat the question mark for the second query.)
