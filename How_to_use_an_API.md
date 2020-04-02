@@ -68,4 +68,7 @@ If this output were considerably longer and contained more nested arrays, it wou
 
 The JSON Formatter allows you to sort data, filter, format, convert, and download data in alternate formats. If you want to use the data within Google Sheets for example, you can convert to csv, download the data, and open in Google Sheets.
 
+## Programmatic Access to APIs
+While the above techniques work well for small datasets, if you want to access large datasets and/or want to wrangle and analyze the data, you can access APIs programmatically. You can access data through Python, R, Javascript, a command line terminal, and more. There are even proprietary software platforms for interacting with APIs. The video below shows a very quick example of accessing Tweets via the Twitter API using a Python script:
+
 [![Python Script that captures Tweets. Youtube Video](Images/YouTubeScreenshot2.png)](//youtu.be/RY7q3MpRN3s "Twitter API with Python")
