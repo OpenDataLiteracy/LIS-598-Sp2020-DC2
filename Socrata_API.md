@@ -21,3 +21,9 @@ Take some time to familiarize yourself with what is available on this page inclu
 ![Screenshot API Link](Images/API_Link_Window.png)
 
 If you click "Copy" on the API endpoint and paste this URL into a browser window, you will see all the data. Depending on which brower you use, you may see this JSON file formatted in an easy to navigate format or a raw textual format. This is nice, but we could have just exported the data and viewed it in our preferred software. The API endpoint is an easy way to import data programatically into data analysis tools such as Tableau and R. But you can also use to API to filter the data to exactly what you need, to avoid downloading or importing files that are too large. So we have the api endpoint URL [`https://data.wa.gov/resource/vtkh-65is.json`](https://data.wa.gov/resource/vtkh-65is.json), let's figure out how to filter the data to see only sites which are in King County.
+
+If you look at the data portal page again, you will see that there is a list of all the columns in the dataset. One of the columns is "County Name." Click on the arrow to the right of "County Name":
+
+![Screenshot County Name](Images/County_Name_Screen.png)
+
+You can now see that the data type for this colummn is "Text" and the API Field Name is "county_name". This API field name is what you'll need for doing a filtered API call.
