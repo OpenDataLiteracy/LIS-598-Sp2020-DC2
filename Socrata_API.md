@@ -26,4 +26,13 @@ If you look at the data portal page again, you will see that there is a list of 
 
 ![Screenshot County Name](Images/County_Name_Screen.png)
 
-You can now see that the data type for this colummn is "Text" and the API Field Name is "county_name". This API field name is what you'll need for doing a filtered API call.
+You can now see that the data type for this colummn is "Text" and the API Field Name is "county_name". This API field name is what you'll need for doing a filtered API call. To figure out the structure of our filtered API call, let's refer to the SODA API Documentation, specifically the [Getting Started](https://dev.socrata.com/consumers/getting-started.html) chapter. If you scroll down (or better yet read through) to the "Building simple filters and queries" section, the first example for a simple filters will give us the information we need.
+
+![Screenshot Simple Filters](Images/Simple_Filters_Screen.png)
+
+You can see by this example, that the beginning of the query (the api endpoint) is the same as what we used above: [`https://data.wa.gov/resource/vtkh-65is.json`](https://data.wa.gov/resource/vtkh-65is.json). The next step to adding a query to the URL is to add a question mark. This is also a common method for querying REST APIs. Following the question mark you need to specify the attribute/field/column, and we already found out above that the API Field Name we are looking for is "county_name". Finally, we are looking for an exact match so we can use the equals sign following by th estring we want to match, "King" (but note you do not want to enclose the string in quotations marks or apostrophes - this is different than how you deal with strings in many programming languages). So our final URL looks like: [`https://data.wa.gov/resource/vtkh-65is.json?county_name=King`](https://data.wa.gov/resource/vtkh-65is.json?county_name=King).
+
+This should get you started on making filtered query API calls. Notice in the screenshot above that there is considerably more documentation on filtering datasets. This example is the tip of the iceberg in what you can do. With SODA it's easy to experiment with different queries directly in your brower window. Here are a couple of things to notice about our example and perhaps you can dig into the documentation to figure out workarounds to the problems that will arise here:
+
+- What happens when you create the filtered query but don't capitalize the 'K' in King?
+- What happens when you replace 'json' with 'csv'?
