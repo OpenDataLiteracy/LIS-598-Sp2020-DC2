@@ -20,6 +20,12 @@ sample1 <- function(file, n) {
 circ <- sample1("~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/Casey Gabehart - Circulation by Title 6mo SIL 20200216.csv", 98)
 ```
 
+```{r}
+# https://cran.r-project.org/web/packages/hablar/vignettes/retype.html
+circ <- circ %>%
+  hablar::retype()
+```
+
 
 ```{r}
 # This code reads in the entire dataset - very large!
@@ -31,6 +37,8 @@ circ <- sample1("~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/Casey Gabeha
 ```
 
 ```{r}
-write_csv(circ, "~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/SnoIsleCircSample.csv", col_names = T)
+write.table(circ, file = "~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/SnoIsleCircSample_NoMess.csv", sep = "|", row.names = FALSE, quote = FALSE)
 ```
+
+
 

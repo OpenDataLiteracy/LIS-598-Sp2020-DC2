@@ -1788,6 +1788,14 @@ circ &lt;- sample1(&quot;~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/Case
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2lyYyA8LSBjaXJjICU+JVxuICBoYWJsYXI6OnJldHlwZSgpXG5gYGAifQ== -->
+<pre class="r"><code>circ &lt;- circ %&gt;%
+  hablar::retype()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2lyYyA8LSByZWFkX2RlbGltKFwifi9Eb2N1bWVudHMvR2l0SHViL0xJUy01OTgtU3AyMDIwLURDMi10ZXN0aW5nL0RhdGEvQ2FzZXkgR2FiZWhhcnQgLSBDaXJjdWxhdGlvbiBieSBUaXRsZSA2bW8gU0lMIDIwMjAwMjE2LmNzdlwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgZGVsaW0gPSBcInxcIiwgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICBlc2NhcGVfZG91YmxlID0gRkFMU0UsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJpbV93cyA9IFRSVUUpXG5gYGAifQ== -->
 <pre class="r"><code>circ &lt;- read_delim(&quot;~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/Casey Gabehart - Circulation by Title 6mo SIL 20200216.csv&quot;,
                            delim = &quot;|&quot;, 
@@ -1815,14 +1823,14 @@ Warning in for (name in names(hooks)) { :
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3JpdGVfY3N2KGNpcmMsIFwifi9Eb2N1bWVudHMvR2l0SHViL0xJUy01OTgtU3AyMDIwLURDMi10ZXN0aW5nL0RhdGEvU25vSXNsZUNpcmNTYW1wbGUuY3N2XCIsIGNvbF9uYW1lcyA9IFQpXG5gYGAifQ== -->
-<pre class="r"><code>write_csv(circ, &quot;~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/SnoIsleCircSample.csv&quot;, col_names = T)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3JpdGUudGFibGUoY2lyYywgZmlsZSA9IFwifi9Eb2N1bWVudHMvR2l0SHViL0xJUy01OTgtU3AyMDIwLURDMi10ZXN0aW5nL0RhdGEvU25vSXNsZUNpcmNTYW1wbGVfTm9NZXNzLmNzdlwiLCBzZXAgPSBcInxcIiwgcm93Lm5hbWVzID0gRkFMU0UsIHF1b3RlID0gRkFMU0UpXG5gYGAifQ== -->
+<pre class="r"><code>write.table(circ, file = &quot;~/Documents/GitHub/LIS-598-Sp2020-DC2-testing/Data/SnoIsleCircSample_NoMess.csv&quot;, sep = &quot;|&quot;, row.names = FALSE, quote = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgpgYGB7cn0KbGlicmFyeShMYUYpCiMgVGhpcyBmdW5jdGlvbiBhbmQgY29kZSBncmFiIGEgcmFuZG9tIHNhbXBsZSBvZiByb3dzIGZyb20gYSBsYXJnZSBjc3YKI2h0dHBzOi8vc3RhdGNvbXB1dGUud29yZHByZXNzLmNvbS8yMDE4LzA0LzI4L3JlYWQtcmFuZG9tLXJvd3MtZnJvbS1hLWh1Z2UtY3N2LWZpbGUvCnNhbXBsZTEgPC0gZnVuY3Rpb24oZmlsZSwgbikgewogIGxmIDwtIGxhZl9vcGVuKGRldGVjdF9kbV9jc3YoZmlsZSwgc2VwID0gInwiLCBoZWFkZXIgPSBUUlVFLCBzdHJpbmdzQXNGYWN0b3JzPSBGQUxTRSwgZmFjdG9yX2ZyYWN0aW9uID0gLTEsIGZpbGwgPSBUUlVFKSkKICByZXR1cm4ocmVhZF9saW5lcyhsZiwgc2FtcGxlKDE6bnJvdyhsZiksIG4pKSkKfQogCmNpcmMgPC0gc2FtcGxlMSgifi9Eb2N1bWVudHMvR2l0SHViL0xJUy01OTgtU3AyMDIwLURDMi10ZXN0aW5nL0RhdGEvQ2FzZXkgR2FiZWhhcnQgLSBDaXJjdWxhdGlvbiBieSBUaXRsZSA2bW8gU0lMIDIwMjAwMjE2LmNzdiIsIDk4KQpgYGAKCgpgYGB7cn0KIyBUaGlzIGNvZGUgcmVhZHMgaW4gdGhlIGVudGlyZSBkYXRhc2V0IC0gdmVyeSBsYXJnZSEKCiMgY2lyYyA8LSByZWFkX2RlbGltKCJ+L0RvY3VtZW50cy9HaXRIdWIvTElTLTU5OC1TcDIwMjAtREMyLXRlc3RpbmcvRGF0YS9DYXNleSBHYWJlaGFydCAtIENpcmN1bGF0aW9uIGJ5IFRpdGxlIDZtbyBTSUwgMjAyMDAyMTYuY3N2IiwKIyAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZWxpbSA9ICJ8IiwgCiMgICAgICAgICAgICAgICAgICAgICAgICAgICAgZXNjYXBlX2RvdWJsZSA9IEZBTFNFLCAKIyAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmltX3dzID0gVFJVRSkKYGBgCgpgYGB7cn0Kd3JpdGVfY3N2KGNpcmMsICJ+L0RvY3VtZW50cy9HaXRIdWIvTElTLTU5OC1TcDIwMjAtREMyLXRlc3RpbmcvRGF0YS9Tbm9Jc2xlQ2lyY1NhbXBsZS5jc3YiLCBjb2xfbmFtZXMgPSBUKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgpgYGB7cn0KbGlicmFyeShMYUYpCiMgVGhpcyBmdW5jdGlvbiBhbmQgY29kZSBncmFiIGEgcmFuZG9tIHNhbXBsZSBvZiByb3dzIGZyb20gYSBsYXJnZSBjc3YKI2h0dHBzOi8vc3RhdGNvbXB1dGUud29yZHByZXNzLmNvbS8yMDE4LzA0LzI4L3JlYWQtcmFuZG9tLXJvd3MtZnJvbS1hLWh1Z2UtY3N2LWZpbGUvCnNhbXBsZTEgPC0gZnVuY3Rpb24oZmlsZSwgbikgewogIGxmIDwtIGxhZl9vcGVuKGRldGVjdF9kbV9jc3YoZmlsZSwgc2VwID0gInwiLCBoZWFkZXIgPSBUUlVFLCBzdHJpbmdzQXNGYWN0b3JzPSBGQUxTRSwgZmFjdG9yX2ZyYWN0aW9uID0gLTEsIGZpbGwgPSBUUlVFKSkKICByZXR1cm4ocmVhZF9saW5lcyhsZiwgc2FtcGxlKDE6bnJvdyhsZiksIG4pKSkKfQogCmNpcmMgPC0gc2FtcGxlMSgifi9Eb2N1bWVudHMvR2l0SHViL0xJUy01OTgtU3AyMDIwLURDMi10ZXN0aW5nL0RhdGEvQ2FzZXkgR2FiZWhhcnQgLSBDaXJjdWxhdGlvbiBieSBUaXRsZSA2bW8gU0lMIDIwMjAwMjE2LmNzdiIsIDk4KQpgYGAKCmBgYHtyfQojIGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnL3dlYi9wYWNrYWdlcy9oYWJsYXIvdmlnbmV0dGVzL3JldHlwZS5odG1sCmNpcmMgPC0gY2lyYyAlPiUKICBoYWJsYXI6OnJldHlwZSgpCmBgYAoKCmBgYHtyfQojIFRoaXMgY29kZSByZWFkcyBpbiB0aGUgZW50aXJlIGRhdGFzZXQgLSB2ZXJ5IGxhcmdlIQoKIyBjaXJjIDwtIHJlYWRfZGVsaW0oIn4vRG9jdW1lbnRzL0dpdEh1Yi9MSVMtNTk4LVNwMjAyMC1EQzItdGVzdGluZy9EYXRhL0Nhc2V5IEdhYmVoYXJ0IC0gQ2lyY3VsYXRpb24gYnkgVGl0bGUgNm1vIFNJTCAyMDIwMDIxNi5jc3YiLAojICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRlbGltID0gInwiLCAKIyAgICAgICAgICAgICAgICAgICAgICAgICAgICBlc2NhcGVfZG91YmxlID0gRkFMU0UsIAojICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyaW1fd3MgPSBUUlVFKQpgYGAKCmBgYHtyfQp3cml0ZS50YWJsZShjaXJjLCBmaWxlID0gIn4vRG9jdW1lbnRzL0dpdEh1Yi9MSVMtNTk4LVNwMjAyMC1EQzItdGVzdGluZy9EYXRhL1Nub0lzbGVDaXJjU2FtcGxlX05vTWVzcy5jc3YiLCBzZXAgPSAifCIsIHJvdy5uYW1lcyA9IEZBTFNFLCBxdW90ZSA9IEZBTFNFKQpgYGAKCgoK</div>
 
 
 
