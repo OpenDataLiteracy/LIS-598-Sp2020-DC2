@@ -61,3 +61,5 @@ If you look at the [raw data]((https://raw.githubusercontent.com/OpenDataLiterac
 ![Screenshot of OpenRefine](Images/OpenRefineColumns.png)
 
 OpenRefine has detected 15 columns, 5 of which it has auto-named as "Column #". It appears that many of the cells in these columns are empty and not even filled with "NULL". When you scroll down a bit, you'll notice that row 23 is the first row to include data within columns 11-15. Continue scrolling and you'll notice that row 68 also contains data within those columns. Both of these entries are materials in Russian. Even if you don't read Russian, you should be able to notice that CopyrightDate and the DataLastBorrowed columns are not matching up with the data correctly in these two rows. Keep this information in mind because you will need to clean this data at a later point.
+
+Go ahead now and click "Create Project" (feel free to rename your project if you prefer).
