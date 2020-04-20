@@ -49,3 +49,11 @@ Each ILS will have its own unique method for generating data, it won't always be
 OpenRefine is a tool designed to clean up messy data. Once you have it installed, open up the application (which will open and run in your default browser tab) and in the left menu choose "Create Project". OpenRefine has a handy tool for using data from a URL, so you can choose "Web Addresses (URLs)" to start your project and enter the link above to the data (https://raw.githubusercontent.com/OpenDataLiteracy/LIS-598-Sp2020-DC2-testing/master/Data/SnoIsleCircSample.csv). Click "Next."
 
 ![Screenshot of OpenRefine](Images/OpenRefineCreateProject.png)
+
+OpenRefine automatically tries to detect the separator used in the file, but allows the use to change the detection paramaters.
+
+![Screenshot of OpenRefine](Images/OpenRefineParseDataAs.png)
+
+You'll notice that the file is in comma-separated value (CSV) format. Does that match the reality of the file? How can you tell?
+
+If you look at the [raw data]((https://raw.githubusercontent.com/OpenDataLiteracy/LIS-598-Sp2020-DC2-testing/master/Data/SnoIsleCircSample.csv)) in your browser, and scan the first row, which in this case is the column header names, you will see that this file is NOT separated by commas, but rather by pipes |. This is definitely an uncommon separator value, but OpenRefine still caught it and noted that the columns were separated by a custom value. If OpenREfine hadn't detected this, you would want to change this parameter before continuing on with the data.
