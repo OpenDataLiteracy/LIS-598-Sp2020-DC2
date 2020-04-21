@@ -60,4 +60,27 @@ If you look at the [raw data]((https://raw.githubusercontent.com/OpenDataLiterac
 
 ![Screenshot of OpenRefine](Images/OpenRefineColumns.png)
 
-OpenRefine has detected 15 columns, 5 of which it has auto-named as "Column [#]". It appears that many of the cells in these columns are empty and not even filled with "NULL". When you scroll down a bit, you'll notice that row 23 is the first row to include data within columns 11-15. Continue scrolling and you'll notice that row 68 also contains data within those columns. Both of these entries are materials in Russian. Even if you don't read Russian, you should be able to notice that CopyrightDate and the DataLastBorrowed columns are not matching up with the data correctly in these two rows. It turns out the the Cyrillic alphabet contains a letter called "[Palochka](https://en.wikipedia.org/wiki/Palochka)" which is also the vertical bar.
+OpenRefine has detected 15 columns, 5 of which it has auto-named as "Column [#]". It appears that many of the cells in these columns are empty and not even filled with "NULL". When you scroll down a bit, you'll notice that row 23 is the first row to include data within columns 11-15. Continue scrolling and you'll notice that row 68 also contains data within those columns. Both of these entries are materials in Russian. Even if you don't read Russian, you should be able to notice that CopyrightDate and the DataLastBorrowed columns are not matching up with the data correctly in these two rows. It turns out the the Cyrillic alphabet contains a letter called "[Palochka](https://en.wikipedia.org/wiki/Palochka)" which is also the vertical bar. This is problematic for our file and will require "hand" fixing in a text editor (or Excel or Google Sheets, but I prefer a text editor). There may be workarounds to do this using only OpenRefine, but OpenRefine was not designed to manipulate individual rows and a text editor will be the fastest method.
+
+There are many ways to import this file into a text editor. This tutorial will walk you through one way, but as described above you can also copy and paste from the browser data file or programmatically download the data file. Here we will continue using OpenRefine. Go ahead and click "Create Project" in OpenRefine. Next, "Export" the dataset as a "tab-separated value" file and save the file to your machine. Open the file in your favorite text editor (I like Visual Studio Code, but any text editor will work).
+
+Your text editor probably won't recognize the first row as the column headers, so column headers are Row 1 (in OpenRefine Row 1 was the first row of data because it had recognized the Column Header row). This is important because we will have to add 1 to the row numbers we identified in OpenRefine as needing fixing. So, let's fix rows 24 (23+1) and 69 (68+1):
+
+```
+1	Meni͡	a zovut Sheĭlok : kaver-versii͡	a Venet͡	sianskogo kupt͡	sa Uilʹi͡	ama Shekspira	INTL-RUS FIC JACOBSO	Jacobson, Howard, author.	EDM	Izdatelʹstvo Ė,	2017	2020-01-03 11:21:07.667	International Russian	NULL
+```
+```
+1	Zloĭ rok Mariny ?T	Svetaevoĭ : Zhiva?i	a dusha v mertvoĭ petle	INTL-RUS BIO TSVETAE POLIKOV	Polikovskai︠a︡, L. V. (Li︠u︡dmila Vladimirovna), author.	LYN	ĖKSMO,	2013	2019-09-26 16:18:23.823	International Russian	NULL			
+```
+
+We exported the file as tab-separated so all the pipes are gone and a tab indicates each next cell. For the two Russian titles that are causing problems, we need to add the pipes back in because they are legitimate characters within the titles. If you don't read Russian, how will you know where the title starts and ends? The first column is TotalCheckouts (an integer indicating how many times the title was checked out). So we know that the first integer is NOT part of the title. A tab then indicates we are entering a new cell. The second column should be the Title. We expect to see text or a "string" in this cell which is indeed the case. So how do we know where the title ends? The third column should be CallNumber, which we can see by looking at other examples in the dataset, is usually a combination of Dewey Decimal numbers and/or capital letters. In the case of the items above, we can identify what should be the third column by looking for text that is in all caps, both start with "INTL-RUS". Since we can now identify the start and end of the titles, we can replace the tabs that occur WITHIN the titles with the original pipe character. After fixing, the rows should now look like this:
+
+```
+1	Meni͡|a zovut Sheĭlok : kaver-versii͡|a Venet͡|sianskogo kupt͡|sa Uilʹi͡|ama Shekspira	INTL-RUS FIC JACOBSO	Jacobson, Howard, author.	EDM	Izdatelʹstvo Ė,	2017	2020-01-03 11:21:07.667	International Russian	NULL
+
+```
+```
+1	Zloĭ rok Mariny ?T|Svetaevoĭ : Zhiva?i|a dusha v mertvoĭ petle	INTL-RUS BIO TSVETAE POLIKOV	Polikovskai︠a︡, L. V. (Li︠u︡dmila Vladimirovna), author.	LYN	ĖKSMO,	2013	2019-09-26 16:18:23.823	International Russian	NULL						
+```
+
+Now you need to save this file on your machine. Let's name it "SnoIsleCircSample.tsv".
