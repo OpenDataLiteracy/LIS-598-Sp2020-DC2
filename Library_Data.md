@@ -83,4 +83,10 @@ We exported the file as tab-separated so all the pipes are gone and a tab indica
 1	Zloĭ rok Mariny ?T|Svetaevoĭ : Zhiva?i|a dusha v mertvoĭ petle	INTL-RUS BIO TSVETAE POLIKOV	Polikovskai︠a︡, L. V. (Li︠u︡dmila Vladimirovna), author.	LYN	ĖKSMO,	2013	2019-09-26 16:18:23.823	International Russian	NULL						
 ```
 
-Now you need to save this file on your machine. Let's name it "SnoIsleCircSample.tsv".
+Now you need to save this file on your machine. Let's name it "SnoIsleCircSample.tsv". Now we can go back to OpenRefine and Create a New Project with this file. This time instead of importing the data from a URL, you are going to import the data from a file on your machine:
+
+![Screenshot of OpenRefine](Images/OpenRefineGetDataFromFile.png)
+
+Browse for your file that you named SnoIsleCircSample.tsv and click "Next." You will see a familiar screen. OpenRefine has auto-detected that the file is tab-separated this time and still recognizes that the first row contains column headings. Go ahead and choose "Parse cell text into numbers, dates, ..." as you did previously. Now take a look at the column headings. What do you notice? There are still extraneous columns! Why is this? When we exported the file as tab-separated, every cell was included (even the blank cells). When we manipulated the file in the text editor, we did not remove all the extra tabs that came at the end of each row. We could have manually gone through each row and deleted the extra tabs, but that would be tedious and OpenRefine offers and easier solution. BUt first let's double-check that our edits fixed rows 23 and 68. Scroll through the data and see if they end with the column "ItemCode." Indeed, it appears that columns 11-15 are now entirely empty - which is what we want. So for now, go ahead and click "Create Project."
+
+Now we can begin cleaning the whole dataset with some simple options provided by OpenRefine. First, we know that Columns 11-15 are empty and we don't need them. If you click the down arrow next to the heading "Column11" you will get a menu of options. Choose "Edit Column" and then "Remove this Column". Repeat this for columns 12-15.
