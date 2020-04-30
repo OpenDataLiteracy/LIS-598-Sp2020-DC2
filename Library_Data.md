@@ -1,4 +1,4 @@
-# Using Library Data
+# Claening Library Data with OpenRefine
 ```
 Author: Bree Norlander
 Date: 2020-04-17
