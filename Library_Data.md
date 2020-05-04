@@ -1,4 +1,4 @@
-# Claening Library Data with OpenRefine
+# Cleaning Library Data with OpenRefine
 ```
 Author: Bree Norlander
 Date: 2020-04-17
