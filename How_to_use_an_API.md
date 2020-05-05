@@ -85,5 +85,5 @@ My goal in this tutorial was to introduce you to APIs and how you can start usin
 Accessing the API documentation is the key to successfully using an API. Not all APIs are structured alike. In order to create exactly the API call you desire, you will likely employ trial and error and documentation referencing. Trial and error is how we all learn! Also, if you plan to perform the query/API call again in the future, write down how and why you can up with the query call so you don't have to start from scratch again next time!
 
 ## Additional APIs I Recommend for Practice
-[The COVID Tracking Project](https://covidtracking.com/api)
-[PokeAPI The RESTful Pokemon API](https://pokeapi.co/)
++ [The COVID Tracking Project](https://covidtracking.com/api)
++ [PokeAPI The RESTful Pokemon API](https://pokeapi.co/)
