@@ -10,13 +10,18 @@ API is the acronym for Application Programming Interface. An API does the work o
 
 [![What is an API Youtube Video](Images/YouTubeScreenshot.png)](//youtu.be/s7wmiS2mSXY?t=3 "What is an API?")
 
-So why should a data curator be interested in APIs? An API is a common tool for retrieving data.
+So why should a data curator be interested in APIs? An API is a common tool for retrieving data. 
 
 ![Why is this important?](Images/Whyisthisimportant.png)
 
 APIs provide the messenger service you need to collect data from sites like [Twitter](https://developer.twitter.com/en/docs/api-reference-index), [MySportsFeeds](https://www.mysportsfeeds.com/data-feeds/), [RottenTomatoes](https://developer.fandango.com/rotten_tomatoes), [Twitch](https://dev.twitch.tv/docs/api/), and more. Most of these sites will require you to apply for an API key and may have restrictions on the use of their data. For example, RottenTomatoes, states “Please note that at this time we no longer support unauthorized use of our data (e.g. unofficial projects, non-user facing data integrations).”
 
-If you are interested in working with data, whether it be as a Data Curator, a Government Docs Librarian, or a Data Scientist, it will benefit you to be familiar with APIs.
+If you are interested in working with data, whether it be as a Data Curator, a Government Docs Librarian, or a Data Scientist, it will benefit you to be familiar with APIs. The following are use cases for which you may find yourself using an API:
+
++ accessing/retrieving a specific dataset 
++ retrieving a filtered dataset from a large dataset (perhaps you only need data for your specific state in a dataset that contains naionwide data)
++ searching for specific data within a dataset (e.g. does this dataset contain data from my zip code or what are the unique values within a specific column)
++ performing simple calculations or summaries on a dataset directly within your browser (no need to download the data and use another software platform)
 
 As is the case with repositories, data portals, and an email from your boss, data retrieved from an API may be presented in a variety of different formats. When you use a "web service" API you will mainly see outputs in the form of eXtensible Markup Language known as XML, JavaScript Object Notation known as JSON (or geoJSON for geographic data), or Comma Separated Values known as CSV. A **web service** is a "[system or software that uses an address, i.e., URL on the World Wide Web, to provide access to its services](https://rapidapi.com/blog/types-of-apis/)". This means that the API output can be viewed directly in a web browser. The three most common types of web service APIs are:
 + simple object access protocol or SOAP which returns an XML object
@@ -75,3 +80,10 @@ While the above techniques work well for small datasets, if you want to access l
 [![Python Script that captures Tweets. Youtube Video](Images/YouTubeScreenshot2.png)](//youtu.be/RY7q3MpRN3s "Twitter API with Python")
 
 My goal in this tutorial was to introduce you to APIs and how you can start using them today. While some APIs will require a coding background, many do not. I hope you will feel comfortable testing out different APIs and gathering data from sources of interest. As you experiement with gathering data via an API, be sure to look at the documentation for that API. Most documentation will give you all the information you need to format the query just the way you want it.
+
+## Final Tip
+Accessing the API documentation is the key to successfully using an API. Not all APIs are structured alike. In order to create exactly the API call you desire, you will likely employ trial and error and documentation referencing. Trial and error is how we all learn! Also, if you plan to perform the query/API call again in the future, write down how and why you can up with the query call so you don't have to start from scratch again next time!
+
+## Additional APIs I Recommend for Practice
+[The COVID Tracking Project](https://covidtracking.com/api)
+[PokeAPI The RESTful Pokemon API](https://pokeapi.co/)
