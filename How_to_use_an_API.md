@@ -87,3 +87,5 @@ Accessing the API documentation is the key to successfully using an API. Not all
 ## Additional APIs I Recommend for Practice
 + [The COVID Tracking Project](https://covidtracking.com/api)
 + [PokeAPI The RESTful Pokemon API](https://pokeapi.co/)
++ [Spoonacular API](https://spoonacular.com/food-api/docs)
++ [BreweryDB](https://www.brewerydb.com/developers/docs)
